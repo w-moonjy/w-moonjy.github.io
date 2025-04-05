@@ -1,0 +1,855 @@
+<!--
+    해당 파일은 패플데이 기획전에 사용할 스크립트 Reference 저장용임.
+
+    개발 시 웹디자인팀에서 작성한 패플데이 기획전 html 파일(fashionplus/FileDatas/legacy/exhibiton/mobile/eventmain_{기획전번호}.html)에
+    필요한 스크립트를 추가한다.
+
+    테스트용 기획전 번호 : 17550
+    실서버 기획전 번호 : 20490
+-->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap');
+
+    #fapleDay > img {
+        width: 100%;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    a {
+        display: block;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .event_wrap {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .event_top_main_wrap {
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mainObj {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99;
+    }
+    .mainObj > img {
+        position: absolute;
+    }
+
+    .mO1, .mO4 {
+        animation: m_o1 5s linear infinite;
+        -webkit-animation: m_o1 5s linear infinite;
+    }
+
+    @keyframes m_o1 {
+        0% {
+            opacity: 0;
+        }
+
+        10%, 90% {
+            opacity: 1;
+        }
+
+        30% {
+            transform: rotate(-5deg);
+        }
+        
+        70% {
+            transform: rotate(0);
+        }
+       100% {
+        opacity: 0;
+       }
+    }
+
+    @-webkit-keyframes m_o1 {
+        0% {
+            opacity: 0;
+        }
+
+        10%, 90% {
+            opacity: 1;
+        }
+
+        30% {
+            transform: rotate(-5deg);
+        }
+        
+        70% {
+            transform: rotate(0);
+        }
+       100% {
+        opacity: 0;
+       }
+    }
+
+    .mO2, .mO3 {
+        animation: m_o2 5s linear infinite;
+        -webkit-animation: m_o2 5s linear infinite;
+    }
+
+    @keyframes m_o2 {
+        0% {
+            opacity: 0;
+        }
+
+        10%, 90% {
+            opacity: 1;
+        }
+
+        30% {
+            transform: rotate(-5deg);
+        }
+        
+        70% {
+            transform: rotate(0);
+        }
+       100% {
+        opacity: 0;
+       }
+    }
+
+    @-webkit-keyframes m_o2 {
+        0% {
+            opacity: 0;
+        }
+
+        10%, 90% {
+            opacity: 1;
+        }
+
+        30% {
+            transform: rotate(-5deg);
+        }
+        
+        70% {
+            transform: rotate(0);
+        }
+       100% {
+        opacity: 0;
+       } 
+    }s
+
+    .event_top_menu_wrap {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .event_topF_menu {
+        display: flex;
+    }
+
+        .event_topF_menu > a {
+            width: 33.33333333333%;
+        }
+
+    .event_section_wrap {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .event_modalBox {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .2);
+        z-index: 10;
+    }
+
+    .event_modalCon {
+        display: none;
+        position: fixed;
+        max-width: 90vw;
+        max-height: 60%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        overflow-y: auto;
+        z-index: 99;
+    }
+
+        .event_modalCon .event_modalTitle {
+            font-size: 2.8rem;
+            padding: 5%;
+            text-align: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 700;
+        }
+
+    .event_modalCon .event_modalTxt {
+        font-size: 1.5rem;
+        line-height: 1.7;
+        padding: 5%;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 400;
+    }
+
+    .event_modalCon .event_modalImg {
+        width: 100%;
+    }
+
+        .event_modalCon .event_modalImg > img {
+            width: 100%;
+        }
+
+
+    .event_modalCon .event_modalClose {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        text-decoration: none;
+        color: #000;
+        font-size: 20px;
+        font-weight: bold;
+        right: 10px;
+        top: 10px;
+    }
+
+    .event_modal2_1,
+    .event_modal2_2 {
+        width: 80vw;
+        height: auto;
+        overflow-y: auto;
+    }
+
+    .event_01_couponpack > img,
+    .event_01_couponpack > a > img,
+    .event_02_appevent > img,
+    .event_02_appevent > a > img,
+    .event_03_saleproducts > img,
+    .event_03_saleproducts > a > img,
+    .event_04_bestbrand > img,
+    .event_04_bestbrand > a > img,
+    .event_05_live > img,
+    .event_05_live > a > img,
+    .event_button_area > img,
+    .event_button_area > a > img {
+        display: block;
+        margin-bottom: -1px;
+    }
+
+    .event_ul_del::after {
+        display: none;
+    }
+
+    .event_ul_del > li {
+        margin-bottom: -1px;
+    }
+
+    .event_button_area {
+        position: relative;
+    }
+
+    .event_button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+    }
+
+    .txtBold {
+        font-weight: 600;
+    }
+
+    .txtRed {
+        color: red;
+    }
+
+    .txtSmall {
+        font-size: 1.2rem;
+    }
+
+    .event_01_button1 {
+        width: 73%;
+        bottom: 17%;
+    }
+
+    .event_01_button2 {
+        width: 30%;
+        bottom: 8%;
+    }
+
+    .event_02_button1 {
+        width: 73%;
+        bottom: 17%;
+    }
+    .event_02_button2 {
+        width: 30%;
+        bottom: 8%;
+    }
+
+    .event_03_button {
+        width: 83%;
+        bottom: 66%;
+    }
+</style>
+
+<div id="fapleDay">
+    <div class="event_wrap">
+        <!--상단/탭-->
+        <div class="event_top_main_wrap">
+            <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_mainBG.jpg" alt="">
+            <div class="mainObj">
+                <img class="mO1" src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_mainObj_1.png" alt="">
+                <img class="mO2" src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_mainObj_2.png" alt="">
+                <img class="mO3" src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_mainObj_3.png" alt="">
+                <img class="mO4" src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_mainObj_4.png" alt="">
+            </div>
+        </div>
+        <div class="event_top_menu_wrap">
+            <div class="event_topF_menu">
+                <a href="javascript:;" class="event_topF_menu_01" id="m_event_topF_menu_01" onclick="topA()">
+                    <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_tTab_01.jpg" alt="">
+                </a>
+                <a href="javascript:;" class="event_topF_menu_02" id="m_event_topF_menu_02" onclick="topB()">
+                    <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_tTab_02.jpg" alt="">
+                </a>
+                <a href="javascript:;" class="event_topF_menu_03" id="m_event_topF_menu_03" onclick="topC()">
+                    <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_tTab_03.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <!--//상단/탭-->
+
+        <div class="event_section_wrap">
+            <!--1. 매일매일 2종 쿠폰팩-->
+            <div id="clickEventSection1"></div>
+            <div class="event_section event_section_01">
+                <div class="event_01_couponpack">
+                    <div class="event_button_area">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_01_no.jpg" alt="">
+                        <!--'선착순 쿠폰 받기'-->
+                        <div class="event_button event_01_button1">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_01_b.png" alt="선착순 쿠폰 받기" style="cursor : pointer" onclick="downloadExhibitionCoupon()">
+                        </div>
+                        <!--'유의사항'-->
+                        <div class="event_button event_01_button2">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_02_b2.png" alt="유의사항" style="cursor : pointer" onclick="javascript:openModal('event_modal2_1');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//1. 매일매일 2종 쿠폰팩-->
+            <!--2. 앱 이벤트-->
+            <div id="clickEventSection2"></div>
+            <div class="event_section event_section_02">
+                <div class="event_02_appevent">
+                    <div class="event_button_area">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_02.jpg" alt="">
+                        <!--'앱 이벤트 바로가기'-->
+                        <div class="event_button event_02_button1">
+                            <a style="width:100%;" v-on:click="applyFor(20490)">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_b.png" alt="앱 이벤트 바로가기" style="cursor : pointer">
+                            </a>
+                        </div>
+                         <!--'유의사항'-->
+                        <div class="event_button event_02_button2">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_b2.png" alt="유의사항" style="cursor : pointer" onclick="javascript:openModal('event_modal2_2');">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//2. 앱 이벤트-->
+            <!--3. SALE PRODUCTS-->
+            <div id="clickEventSection3"></div>
+            <div class="event_section event_section_03">
+                <div class="event_03_saleproducts">
+                    <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_1.jpg" alt="">
+                    <ul style="font-size:0;">
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/269125018" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_2.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/255551172" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_3.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/300870117" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_4.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/299708931" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_5.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/269271215" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_6.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/287196596" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_7.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/259513287" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_8.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/278406054" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_9.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/299585235" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_10.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/300916632" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_11.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_12.jpg" alt="">
+                    <ul style="font-size:0;">
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/296759522" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_13.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/296755988" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_14.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/300621720" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_15.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/285520985" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_16.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/285522443" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_17.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/277801729" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_18.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/240392835" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_19.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/277472682" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_20.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/284734791" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_21.jpg" alt="">
+                            </a>
+                        </li>
+                        <li style="display:inline-block; width:50%;">
+                            <a href="https://m.fashionplus.co.kr/goods/detail/235376908" data-href="{ '_type': 'link' }" style="width:100%;">
+                                <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_22.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <!--'상품탭 이동'-->
+                    <div class="event_button_area">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_03_23.jpg" alt="">
+                        <div class="event_button event_03_button">
+                        <a href="#goods_group_1" data-href="{ '_type': 'link' }" style="width:100%;">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_b.png" alt="쿠폰팩 한번에 받기" style="cursor : pointer">
+                        </a>
+                    </div>
+                    </div>                
+                </div>
+            </div>
+            <!--//3. SALE PRODUCTS-->
+            <!--4. category sale-->
+            <div id="clickEventSection4"></div>
+            <div class="event_section event_section_04">
+                <div class="event_04_bestbrand">
+                    <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_1.jpg" alt="">
+                    <a href="https://m.fashionplus.co.kr/exhibition/16014" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c1.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/20430" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c2.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/19307" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c3.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/15966" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c4.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/11336" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c5.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/20414" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c6.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/14295" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c7.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/16196" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c8.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/13393" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c9.jpg" alt="">
+                    </a>
+                    <a href="https://m.fashionplus.co.kr/exhibition/14841" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c10.jpg" alt="">
+                    </a>
+                      <a href="https://m.fashionplus.co.kr/exhibition/19276" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c11.jpg" alt="">
+                    </a>
+                      <a href="https://m.fashionplus.co.kr/exhibition/20290" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c12.jpg" alt="">
+                    </a>
+                      <a href="https://m.fashionplus.co.kr/exhibition/19273" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c13.jpg" alt="">
+                    </a>
+                      <a href="https://m.fashionplus.co.kr/exhibition/17794" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c14.jpg" alt="">
+                    </a>
+                      <a href="https://m.fashionplus.co.kr/exhibition/20491" data-href="{ '_type': 'link' }" style="width:100%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_04_c15.jpg" alt="">
+                    </a>
+                    <img src="https://img.fashionplus.co.kr/mall/event/240826/20490/m20490_fapleday_05.jpg" alt="">
+                </div>
+            </div>
+            <!--//4. category sale-->
+        </div>
+
+        <!--모달팝업DB-->
+        <!--텍스트형(2)-->
+        <div class="event_modalBox" onclick="closeModal()"></div>
+        <div class="event_modalCon event_modal2_1">
+            <a href="javascript:;" class="event_modalClose" onclick="closeModal()">&times;</a>
+            <p class="event_modalTitle">유의사항</p>
+            <div class="event_modalTxt">
+                <span class="txtBold">[매일매일 2종 쿠폰팩 X2장]</span><br />
+                1)행사기간 : 2024.08.26(월)~08.28(수)<br />
+                2)발급대상 : 패션플러스 회원 전체<br />
+                3)쿠폰혜택 :<br />
+                - 상품 중복 10% 쿠폰 (3만원 이상 구매시, 최대 5만원 할인)<br />
+                - 상품 중복 5% 쿠폰 (1만5천원 이상 구매시, 최대 3만원 할인)<br />
+                4)발급조건 : ID 당 하루 1회 선착순 발급 가능<br />
+                5)유효기간 : 당일 자정 자동 소멸<br />
+                <br />
+                <span class="txtBold">[공통]</span><br />
+                - 다운받은 쿠폰은 [마이쇼핑]에서 쿠폰 상세 내역을 확인해주세요.<br />
+                - 할인쿠폰은 한정수량으로 조기 소진될 수 있습니다.<br />
+                - 패플데이 참여 브랜드 대상 쿠폰 사용 가능합니다.<br />
+                - 쿠폰은 포털(네이버, 다음 등) 검색 및 외부 쇼핑채널 경유를 통해 접속 시 사용이 불가할 수 있습니다.<br />
+                - 쿠폰은 포털(네이버, 다음 등) 전용 할인쿠폰과 중복 사용 불가합니다.<br />
+                - 선착순 종료된 쿠폰은 다운되지 않을 수 있습니다.<br />
+                - 해당 이벤트는 사전 고지 없이 혜택 변경 및 조기 종료 될 수 있습니다.
+            </div>
+        </div>
+        <!--//텍스트형(2)-->
+        <!--텍스트형(2)-->
+        <div class="event_modalBox" onclick="closeModal()"></div>
+        <div class="event_modalCon event_modal2_2">
+            <a href="javascript:;" class="event_modalClose" onclick="closeModal()">&times;</a>
+            <p class="event_modalTitle">유의사항</p>
+            <div class="event_modalTxt">
+                - 이벤트 기간 : 2024.08.26(월) ~ 2024.8.28(수)<br />
+            - 이벤트 대상 : 이벤트 기간 내 패션플러스 APP으로 구매한 회원 <br />
+            <br />
+            - 당첨방법<br />
+            1)이벤트 기간 내 행사페이지 응모하기 버튼 클릭<br />
+            2)이벤트 기간 내APP으로 구매<br />
+            - 당첨자정보<br />
+            : 총 30명(1만원10명, 5천원10명, 1천원10명) <br />
+            : 행사페이지 내 응모하기 신청한 고객 30명 추첨을 통해 적립금 지급 <br />
+            - 당첨자 발표일 <br />
+            : 9/9(월) (당첨적립금 확인은 별도 안내 없이 마이페이지 내 적립금 현황에서 확인 가능합니다.) <br />
+            <br />
+            * 쿠폰은[마이쇼핑>나의혜택>쿠폰] 에서 확인 가능합니다. <br />
+            * 적립금은 포털(네이버, 다음 등) 검색 및 외부 쇼핑채널 경유를 통해 접속 시 사용이 불가할 수 있습니다.<br />
+            * 해당 이벤트는 사전 고지 없이 혜택 변경 및 조기 종료 될 수 있습니다. <br />
+            </div>
+        </div>
+        <!--//텍스트형(2)-->
+        <!--//모달팝업DB-->
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script>
+    $('a[target="_blank"]').removeAttr('target');
+    function topA() {
+        location.replace('#clickEventSection1');
+    }
+    function topB() {
+        location.replace('#clickEventSection2');
+    }
+    function topC() {
+        location.replace('#clickEventSection3');
+    }
+    function topD() {
+        location.replace('#clickEventSection4');
+    }
+    function topE() {
+        location.replace('#clickEventSection5');
+    }
+
+
+    function openModal(modalname) {
+        $(".event_modalBox").fadeIn(300);
+        $("." + modalname).fadeIn(300);
+    }
+    function closeModal() {
+        $(".event_modalBox").fadeOut(300);
+        $(".event_modalCon").fadeOut(300);
+        $('.event_modalClose[target="_blank"]').removeAttr('target');
+    }
+</script>
+
+
+<script>
+
+    // 사이트소스에서 참조하는 내용
+    //var exhibitionId = "20325";
+    //function loginOrRegist();
+
+    Faple.init().then(function () {
+        Faple.vues.fapleDay = new Vue({
+            el: "#fapleDay",
+            data: function () {
+                return {
+                    division: "",
+                    isFirstComeEnable: 0,   // 선착순 참여 가능 여부(0 : 마감, 1 : 가능)
+                    firstComeTime: 0        // 선착순 타임(0 이면 첫 타임 시잔 전)
+                }
+            },
+            methods: {
+                // 앱 다운로드 링크
+                appDownloadLink: function () {
+                    /******************************************************************************
+                    Android 링크 : https://play.google.com/store/apps/details?id=kr.co.fashionplusApp.m&hl=ko&gl=KR
+                    IOS 링크 : https://apps.apple.com/kr/app/%ED%8C%A8%EC%85%98%ED%94%8C%EB%9F%AC%EC%8A%A4/id987340532
+                    ******************************************************************************/
+                    var user = window.navigator.userAgent.toLowerCase();
+                    var browser = user.indexOf("edge") > -1 ? "edge" //MS 엣지
+                        : user.indexOf("edg/") > -1 ? "edge(chromium based)" //크롬기반 엣지
+                            : user.indexOf("opr") > -1 ? "opera" //오페라
+                                : user.indexOf("chrome") > -1 ? "chrome"	//크롬
+                                    : user.indexOf("trident") > -1 ? "ie"	//익스플로러
+                                        : user.indexOf("firefox") > -1 ? "firefox"	//파이어폭스
+                                            : user.indexOf("safari") > -1 ? "safari"	//사파리
+                                                : user.indexOf("whale") > -1 ? "whale"	//네이버웨일
+                                                    : "other browser"; // 기타
+                    var popup = null;
+                    popup = window.open(Faple.route("common.external-popup"), 'appDownloadPopup');
+
+                    if (browser == "safari") {
+                        popup.location.href = "https://apps.apple.com/kr/app/%ED%8C%A8%EC%85%98%ED%94%8C%EB%9F%AC%EC%8A%A4/id987340532";
+                    }
+                    else {
+                        popup.location.href = "https://play.google.com/store/apps/details?id=kr.co.fashionplusApp.m&hl=ko&gl=KR";
+                    }
+                },
+                // 패플데이 첫째날, 둘째날, 셋째날 여부
+                isFirstFapleDay: function () {
+                    var today = new Date();
+                    var startDT = new Date('2024-04-29 00:00:00');
+                    var endDT = new Date('2024-06-03 23:59:59');
+                    if (today >= startDT && today <= endDT)
+                        return true;
+                    else
+                        return false;
+                },
+                isSecondFapleDay: function () {
+                    var today = new Date();
+                    var startDT = new Date('2024-06-04 00:00:00');
+                    var endDT = new Date('2024-06-04 23:59:59');
+                    if (today >= startDT && today <= endDT)
+                        return true;
+                    else
+                        return false;
+                },
+                isThirdFapleDay: function () {
+                    var today = new Date();
+                    var startDT = new Date('2024-06-05 00:00:00');
+                    var endDT = new Date('2024-06-05 23:59:59');
+                    if (today >= startDT && today <= endDT)
+                        return true;
+                    else
+                        return false;
+                },
+                isFourthFapleDay: function () {
+                    var today = new Date();
+                    var startDT = new Date('2024-06-06 00:00:00');
+                    var endDT = new Date('2024-06-06 23:59:59');
+                    if (today >= startDT && today <= endDT)
+                        return true;
+                    else
+                        return false;
+                },
+                isFifthFapleDay: function () {
+                    var today = new Date();
+                    var startDT = new Date('2024-05-05 00:00:00');
+                    var endDT = new Date('2024-05-05 23:59:59');
+                    if (today >= startDT && today <= endDT)
+                        return true;
+                    else
+                        return false;
+                },
+                isSixthFapleDay: function () {
+                    var today = new Date();
+                    var startDT = new Date('2024-05-06 00:00:00');
+                    var endDT = new Date('2024-05-06 23:59:59');
+                    if (today >= startDT && today <= endDT)
+                        return true;
+                    else
+                        return false;
+                },
+                // 앱푸시 수신 동의
+                appPushNoti: function () {
+                    mm.bom.alert('내일 특가 찬스 알림받기는 APP에서 가능합니다.\nAPP을 다운 받으신 후 알림받기 눌러주세요!');
+                },
+                // 문자, 이메일 마케팅 동의
+                marketingAgreeMent: function () {
+                    mm.bom.confirm('해당 이벤트는 마케팅 수신 동의 회원 대상으로만 지급 됩니다. 지금 동의 하시면 다양한 혜택을 받아 볼 수 있습니다!', function (yes) {
+                        if (yes) {
+                            //mm.loading.show();
+                            Faple.ajax.post(Faple.route('event.fapleday.marketing'), { isReceiveSms: true, isReceiveMail: true })
+                                .then(function () {
+                                    return true;
+                                })
+                                .catch(Faple.ajax.defaultCatch)
+                                .finally(mm.loading.hide);
+                        }
+                        else {
+                            mm.bom.alert('마케팅 수신동의를 하신 후 응모해 주세요.');
+                            return false;
+                        }
+                    }, { buttons: ['동의', '취소'] });
+
+                },
+                // 이벤트 스킴 : 선착순 적립금
+                firstCome: function (timeTag) {
+                    var $this = this;
+                    if ($this.$shopperType == 'M') {
+                        $this.division = "I";
+                        Faple.ajax.get(Faple.route('event.fapleday.firstCome', { division: $this.division, timeTag: timeTag }))
+                            .then(function (res) {
+                                //var result = res.data.result;
+                                var msg = res.data.msg;
+                                mm.bom.alert(msg);
+
+                            })
+                            .catch(Faple.ajax.defaultCatch);
+                    }
+                    else {
+                        loginOrRegist();
+                    }
+                },
+                // 이벤트 스킴 : 앱 랜덤 적립금
+                appRandomReservesDownload: function () {
+                    mm.bom.alert('해당 이벤트는 APP에서 응모 가능합니다.\nAPP을 다운 받으신 후 응모해주세요!');
+                    // APP QR 이미지 링크 : https://img.fashionplus.co.kr/mall/common/new_bottom_csmenu_qrcode.jpg
+                },
+                // 이벤트 스킴 : 응모 이벤트
+                applyFor: function (type) {
+                    var $this = this;
+                    if ($this.$shopperType == 'M') {
+                        Faple.ajax.post(Faple.route('event.fapleday.apply-for'), { type: type, isApplyPerDay: false })
+                            .then(function (res) {
+                                var msg = res.data.msg;
+                                mm.bom.alert(msg);
+                            })
+                            .catch(Faple.ajax.defaultCatch);
+                    }
+                    else {
+                        loginOrRegist();
+                    }
+                },
+                // 이벤트 스킴 : 선착순 중복 쿠폰 발급
+                firstComeCoupon: function (couponIdConcat) {
+                    var $this = this;
+                    if ($this.$shopperType == 'M') {
+                        Faple.ajax.post(Faple.route('event.fapleday.first-come-coupon'), { couponIdConcat: couponIdConcat })
+                            .then(function (res) {
+                                var msg = res.data.msg;
+                                mm.bom.alert(msg);
+                            })
+                            .catch(Faple.ajax.defaultCatch);
+                    }
+                    else {
+                        loginOrRegist();
+                    }
+                },
+                // 선착순 종료
+                firstComeOver: function () {
+                    mm.bom.alert('선착순 마감 되었습니다!\n\n* 매일 1회 받으실 수 있습니다.\n* 발급 받으신 쿠폰은 [마이쇼핑]에서 확인해주세요.');
+                },
+                // 이벤트 스킴 : 랜덤 중복 쿠폰 발급
+                brandRandomCoupon: function () {
+                    var $this = this;
+                    if ($this.$shopperType == 'M') {
+                        Faple.ajax.get(Faple.route('event.fapleday.brandRandomCoupon'))
+                            .then(function (res) {
+                                var msg = res.data.msg;
+                                mm.bom.alert(msg);
+                            })
+                            .catch(Faple.ajax.defaultCatch);
+                    }
+                    else {
+                        loginOrRegist();
+                    }
+                },
+            }
+        })
+    })
+
+</script>

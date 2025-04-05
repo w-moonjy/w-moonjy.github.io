@@ -1,0 +1,545 @@
+<style>
+    img {
+        width: 100%;
+    }
+
+    .event_page {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .RS_page_wrap {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .RS_top_main_wrap {
+        width: 100%;
+        position: relative;
+    }
+
+    .RS_section_tab_list {
+        width: 100%;
+    }
+
+    .RS_section_tab {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items : center;
+        -webkit-align-items : center;
+    }
+
+    .RS_section_tab_list a {
+        flex: auto;
+    }
+
+    .RS_section_cate_list {
+        width: 100%;
+        height: 212vw;
+        position: relative;
+    }
+
+    .RS_section_cate {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        z-index: -1;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .RS_section_cate ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .RS_section_cate ul li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .RS_activeCate {
+        z-index: 1;
+    }
+</style>
+<div class="event_page">
+    <div class="RS_page_wrap">
+        <div class="RS_top_main_wrap">
+            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_top.jpg" alt="">
+        </div>
+        <div class="RS_section_wrap">
+            <!-- 역시즌 홀릭 -->
+            <div class="RS_section_tab_list">
+                <div class="RS_section_tab">
+                    <a href="javascript:;" onclick="onTabClick(0)" class="RS_activeTab RS_Tab" style="width: 50%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_tab_01_on.jpg" alt="헤비아우터" class="tabImg1">
+                    </a>
+                    <a href="javascript:;" onclick="onTabClick(1)" class="RS_Tab" style="width: 50%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_tab_02_off.jpg" alt="코트/자켓" class="tabImg2">
+                    </a>
+                    <a href="javascript:;" onclick="onTabClick(2)" class="RS_Tab" style="width: 50%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_tab_03_off.jpg" alt="이너웨어" class="tabImg3">
+                    </a>
+                    <a href="javascript:;" onclick="onTabClick(3)" class="RS_Tab" style="width: 50%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_tab_04_off.jpg" alt="겨울팬츠" class="tabImg4">
+                    </a>
+                    <a href="javascript:;" onclick="onTabClick(4)" class="RS_Tab" style="width: 50%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_tab_05_off.jpg" alt="겨울잡화" class="tabImg5">
+                    </a>
+                    <a href="javascript:;" onclick="onTabClick(5)" class="RS_Tab" style="width: 50%;">
+                        <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_tab_06_off.jpg" alt="유아동" class="tabImg6">
+                    </a>
+                </div>
+            </div>
+            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_empty.jpg" alt="">
+            <div class="RS_section_cate_list">
+                <!-- 헤비아우터 -->
+                <ul class="RS_section_cate RS_section_cate_heavy RS_activeCate">
+                    <li style="width: 100%;">
+                        <a href="#goods_group_2" data-href="{ '_type': 'link' }">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_heavy_ti.jpg" alt="헤비아우터 타이틀">
+                        </a>
+                    </li>
+                    <ul style="width: 100%;">
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/269125272" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_heavy_i1.jpg" alt="헤비아우터 아이템1">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/286174858" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_heavy_i2.jpg" alt="헤비아우터 아이템2">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/252959386" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_heavy_i3.jpg" alt="헤비아우터 아이템3">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/285522026" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_heavy_i4.jpg" alt="헤비아우터 아이템4">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/245343237" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_heavy_i5.jpg" alt="헤비아우터 아이템5">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/255684925" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_heavy_i6.jpg" alt="헤비아우터 아이템6">
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+                <!-- 헤비아우터 -->
+
+                <!-- 코트/자켓 -->
+                <ul class="RS_section_cate RS_section_cate_coat">
+                    <li style="width: 100%;">
+                        <a href="#goods_group_3" data-href="{ '_type': 'link' }">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_coat_ti.jpg" alt="코트/자켓 타이틀">
+                        </a>
+                    </li>
+                    <ul style="width: 100%;">
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/256236068" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_coat_i1.jpg" alt="코트/자켓 아이템1">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/291674249" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_coat_i2.jpg" alt="코트/자켓 아이템2">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/269124577" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_coat_i3.jpg" alt="코트/자켓 아이템3">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/234666482" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_coat_i4.jpg" alt="코트/자켓 아이템4">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/277472682" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_coat_i5.jpg" alt="코트/자켓 아이템5">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/285520985" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_coat_i6.jpg" alt="코트/자켓 아이템6">
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+                <!-- 코트/자켓 -->
+
+                <!-- 이너웨어 -->
+                <ul class="RS_section_cate RS_section_cate_inner">
+                    <li style="width: 100%;">
+                        <a href="#goods_group_4" data-href="{ '_type': 'link' }">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_inner_ti.jpg" alt="이너웨어">
+                        </a>
+                    </li>
+                    <ul style="width: 100%;">
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/253830173" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_inner_i1.jpg" alt="이너웨어 아이템1">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/254166082" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_inner_i2.jpg" alt="이너웨어 아이템2">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/277572738" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_inner_i3.jpg" alt="이너웨어 아이템3">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/207815338" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_inner_i4.jpg" alt="이너웨어 아이템4">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/266952689" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_inner_i5.jpg" alt="이너웨어 아이템5">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/276036362" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_inner_i6.jpg" alt="이너웨어 아이템6">
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+                <!-- 이너웨어 -->
+
+                <!-- 겨울팬츠 -->
+                <ul class="RS_section_cate RS_section_cate_pants">
+                    <li style="width: 100%;">
+                        <a href="#goods_group_5" data-href="{ '_type': 'link' }">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_pants_ti.jpg" alt="겨울팬츠 타이틀">
+                        </a>
+                    </li>
+                    <ul style="width: 100%;">
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/258608986" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_pants_i1.jpg" alt="겨울팬츠 아이템1">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/140792522" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_pants_i2.jpg" alt="겨울팬츠 아이템2">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/251578052" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_pants_i3.jpg" alt="겨울팬츠 아이템3">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/236045915" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_pants_i4.jpg" alt="겨울팬츠 아이템4">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/257852191" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_pants_i5.jpg" alt="겨울팬츠 아이템5">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/211725009" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_pants_i6.jpg" alt="겨울팬츠 아이템6">
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+                <!-- 겨울팬츠 -->
+
+                <!-- 겨울잡화 -->
+                <ul class="RS_section_cate RS_section_cate_acc">
+                    <li style="width: 100%;">
+                        <a href="#goods_group_6" data-href="{ '_type': 'link' }">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_acc_ti.jpg" alt="겨울잡화 타이틀">
+                        </a>
+                    </li>
+                    <ul style="width: 100%;">
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/254476646" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_acc_i1.jpg" alt="겨울잡화 아이템1">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/261960965" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_acc_i2.jpg" alt="겨울잡화 아이템2">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/242116470" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_acc_i3.jpg" alt="겨울잡화 아이템3">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/259513287" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_acc_i4.jpg" alt="겨울잡화 아이템4">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/251232723" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_acc_i5.jpg" alt="겨울잡화 아이템5">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/259727873" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_acc_i6.jpg" alt="겨울잡화 아이템6">
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+                <!-- 겨울잡화 -->
+
+                <!-- 유아동 -->
+                <ul class="RS_section_cate RS_section_cate_kids">
+                    <li style="width: 100%;">
+                        <a href="#goods_group_7" data-href="{ '_type': 'link' }">
+                            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_kids_ti.jpg" alt="유아동 타이틀">
+                        </a>
+                    </li>
+                    <ul style="width: 100%;">
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/290511925" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_kids_i1.jpg" alt="유아동 아이템1">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/290512194" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_kids_i2.jpg" alt="유아동 아이템2">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/255955556" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_kids_i3.jpg" alt="유아동 아이템3">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/240142240" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_kids_i4.jpg" alt="유아동 아이템4">
+                                </a>
+                            </li>
+                        </div>
+                        <div style="width: 100%; display: flex;">
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/135273094" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_kids_i5.jpg" alt="유아동 아이템5">
+                                </a>
+                            </li>
+                            <li style="display: inline-block; width: 50%;">
+                                <a href="https://m.fashionplus.co.kr/goods/detail/256362053" data-href="{ '_type': 'link' }">
+                                    <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_cate_kids_i6.jpg" alt="유아동 아이템6">
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </ul>
+                <!-- 유아동 -->
+            </div>
+            <!-- 역시즌 홀릭 -->
+        </div>
+        <div class="RS_top_main_wrap">
+            <img src="https://img.fashionplus.co.kr/mall/event/240627/20300/m20300_RS_bottom.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.8.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+
+    //top menu 클릭 시 새창 띄우지 않음.
+    $('.RS_section_tab>a[target="_blank"]').removeAttr('target');
+
+    function onTabClick(index) {
+        const lists = $('.RS_section_cate_list > ul');
+        lists.removeClass('RS_activeCate');
+        lists[index].classList.add('RS_activeCate');
+    };
+
+    $(function() {
+        var obj = $('.tabImg');
+        $('.tabImg1').on('click', function() {
+            $('.tabImg1').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_off.jpg', '_on.jpg'));
+            });
+            $('.tabImg2').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg3').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg4').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg5').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg6').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+        });
+
+        $('.tabImg2').on('click', function() {
+            $('.tabImg1').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg2').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_off.jpg', '_on.jpg'));
+            });
+            $('.tabImg3').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg4').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg5').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg6').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+        });
+
+        $('.tabImg3').on('click', function() {
+            $('.tabImg1').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg2').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg3').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_off.jpg', '_on.jpg'));
+            });
+            $('.tabImg4').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg5').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg6').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+        });
+
+        $('.tabImg4').on('click', function() {
+            $('.tabImg1').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg2').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg3').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg4').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_off.jpg', '_on.jpg'));
+            });
+            $('.tabImg5').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg6').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+        });
+
+        $('.tabImg5').on('click', function() {
+            $('.tabImg1').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg2').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg3').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg4').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg5').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_off.jpg', '_on.jpg'));
+            });
+            $('.tabImg6').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+        });
+
+        $('.tabImg6').on('click', function() {
+            $('.tabImg1').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg2').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg3').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg4').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg5').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_on.jpg', '_off.jpg'));
+            });
+            $('.tabImg6').each(function() {
+                $(this).attr('src', $(this).attr('src').replace('_off.jpg', '_on.jpg'));
+            });
+        });
+    });
+</script>
